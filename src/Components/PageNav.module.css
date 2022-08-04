@@ -32,9 +32,13 @@
   position: absolute;
 }
 
+.mailIcon {
+  margin-right: 25px;
+}
+
 .numberIcon {
-  position: absoute;
-  left: 13px;
-  z-index: 1;
+  position: absolute;
+  left: 14px;
+  top: 2px;
   background-color: #ffffff;
 }

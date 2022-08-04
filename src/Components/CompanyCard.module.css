@@ -9,6 +9,7 @@
 .archive {
   background-color: #ebeef2;
 }
+
 hr {
   border: 1px solid #e4e7ec;
   margin-right: -25px;
@@ -20,18 +21,19 @@ hr {
   font-size: 14px;
   text-align: left;
   font-weight: bolder;
+  margin-left: 5px;
 }
 
 .created_at {
   font-size: 13px;
   text-align: left;
+  margin-left: 5px;
 }
 
 .desc {
   text-align: left;
   font-size: 15px;
   display: -webkit-box;
-  max-width: 23em;
   height: 50px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

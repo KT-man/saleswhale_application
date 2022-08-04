@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -13,6 +13,7 @@ import ContentContainer from "./Components/ContentContainer";
 
 import ActivityFeed from "./Components/ActivityFeed";
 import "./App.css";
+import ReactContext from "./react-context";
 
 function App() {
   const [teams, setTeams] = useState([]);
@@ -75,7 +76,6 @@ function App() {
   };
 
   const handleSetShowArchive = () => {
-    console.log("working)");
     setShowArchive(true);
     setShowAll(false);
     setShowFavorites(false);
@@ -85,13 +85,12 @@ function App() {
   // -------------------------- Functions to populate favorites array
   // --------------------------
 
-  const handleSetFavoriteList = (team) => {
-    setFavoriteList([...favoriteList, team]);
-    console.log("add");
+  const addFavorite = (teamObj) => {
+    setFavoriteList([...favoriteList, teamObj]);
     console.log(favoriteList);
   };
 
-  const removeFromFavorites = (index) => {
+  const removeFavorite = (index) => {
     const removedFavorite = favoriteList.filter((team, i) => i !== index);
     setFavoriteList([removedFavorite]);
     console.log("minus");
@@ -106,12 +105,12 @@ function App() {
             <Col>
               <SideNav></SideNav>
             </Col>
-            <Col xs={11}>
+            <Col xl={11}>
               <PageNav className="main" current_user={currentUser}></PageNav>
             </Col>
           </Row>
           <Row>
-            <Col xs={{ span: 11, offset: 1 }}>
+            <Col xl={{ span: 11, offset: 1 }}>
               <Header
                 className="main"
                 handleSetShowAll={handleSetShowAll}
@@ -121,17 +120,21 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <Col md={{ span: 8, offset: 1 }}>
-              <ContentContainer
-                className="main"
-                teams={teams}
-                showAll={showAll}
-                showFavorites={showFavorites}
-                showArchive={showArchive}
-                favoriteList={favoriteList}
-              ></ContentContainer>
+            <Col xl={{ span: 8, offset: 1 }}>
+              <ReactContext.Provider value={{ favoriteList, setFavoriteList }}>
+                <ContentContainer
+                  className="main"
+                  teams={teams}
+                  showAll={showAll}
+                  showFavorites={showFavorites}
+                  showArchive={showArchive}
+                  favoriteList={favoriteList}
+                  addFavorite={addFavorite}
+                  removeFavorite={removeFavorite}
+                ></ContentContainer>
+              </ReactContext.Provider>
             </Col>
-            <Col md={3}>
+            <Col xl={3}>
               <ActivityFeed userActivity={userActivity}></ActivityFeed>
             </Col>
           </Row>

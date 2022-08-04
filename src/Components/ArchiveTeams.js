@@ -9,10 +9,10 @@ const ArchiveTeams = (props) => {
   return (
     <>
       <Row>
-        <Col xxl={2} className={styles.allTeams}>
+        <Col xl={2} className={styles.allTeams}>
           Archived
         </Col>
-        <Col xxl={{ span: 3, offset: 7 }} className={styles.showing}>
+        <Col xl={{ span: 3, offset: 7 }} className={styles.showing}>
           Showing {props.archivedTeams.length} out of{" "}
           {props.archivedTeams.length} teams
         </Col>
@@ -20,9 +20,12 @@ const ArchiveTeams = (props) => {
       <Row>
         {props.archivedTeams.map((team) => {
           return (
-            <Col xxl={4} key={Math.random()}>
-              {/* Math.random() to generate pseudorandom key to avoid React warning. Could be replaced with a database _id */}
-              <CompanyCard teamInfo={team}></CompanyCard>
+            <Col xl={4} key={Math.random()}>
+              <CompanyCard
+                teamInfo={team}
+                addFavorite={props.addFavorite}
+                removeFavorite={props.removeFavorite}
+              ></CompanyCard>
             </Col>
           );
         })}
