@@ -1,0 +1,56 @@
+.headerContainer {
+  font-family: "Montserrat";
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05), 0px 0px 30px rgba(0, 0, 0, 0.1);
+  margin: 0px;
+  margin-left: calc(-1 * (100% / 12) + 54px);
+}
+
+.teams {
+  font-size: 30px;
+  font-weight: bolder;
+  padding-top: 15px;
+}
+
+.companyIcon {
+  margin: 20px 0px 0px 20px;
+}
+
+.headerNav {
+  margin-left: 30px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.underline {
+  color: #000000;
+}
+
+.underline:hover {
+  border-bottom: 3px solid #0083e3;
+}
+
+.newTeamButton {
+  float: right;
+  background-color: #40d2bf;
+  font-weight: bold;
+  vertical-align: auto;
+  margin: 20px;
+  border: 0px;
+}
+
+.newTeamButton:hover {
+  background-color: #21e1c8;
+}
+
+.inputText {
+  background-color: transparent;
+  border: 0px;
+}
+
+.inputBox {
+  border: 0px;
+}
+.plusSign {
+  margin-right: 10px;
+}

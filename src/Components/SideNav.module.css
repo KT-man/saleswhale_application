@@ -1,0 +1,30 @@
+.sidenav {
+  height: 100vh;
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #042235;
+  margin: auto;
+  z-index: 1;
+}
+
+.icon {
+  padding-right: 18px;
+  height: 80px;
+  width: 80px;
+  margin-left: 0px;
+}
+
+.icon:first-of-type {
+  margin-top: 20px;
+}
+
+.icon:last-of-type {
+  position: absolute;
+  bottom: 0px;
+}
+
+.icon:hover {
+  fill: white;
+}

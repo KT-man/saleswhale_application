@@ -1,0 +1,15 @@
+.avatar {
+  border-radius: 50px;
+}
+
+.createdAt {
+  opacity: 0.5;
+  font-size: 13px;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.printString {
+  font-size: 14px;
+  text-align: left;
+}

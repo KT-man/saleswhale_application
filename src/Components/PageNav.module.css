@@ -1,0 +1,40 @@
+.navbar {
+  font-size: 18px;
+  line-height: 22px;
+  color: #1a1919;
+  font-family: "Montserrat";
+  margin-left: calc(-1 * (100% / 12) + 54px);
+}
+
+.nav {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 0px #e2e2e2, 0px 0px 4px rgba(0, 0, 0, 0.05);
+  height: 80px;
+}
+
+.brand {
+  opacity: 0.5;
+  margin: 15px 41px 15px 41px;
+}
+
+.vl {
+  height: 80px;
+  border-left: 1px solid #e2e2e2;
+}
+
+.teams {
+  color: #000000;
+  margin: 20px 41px 15px 41px;
+}
+
+.floatRight {
+  right: 20px;
+  position: absolute;
+}
+
+.numberIcon {
+  position: absoute;
+  left: 13px;
+  z-index: 1;
+  background-color: #ffffff;
+}
