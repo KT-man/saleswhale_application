@@ -10,13 +10,36 @@ const IndivUser = (props) => {
   let printString = "";
   switch (props.activity.action) {
     case "increased_quota":
-      printString = `${props.activity.person.name} increased ${props.activity.target} quota.`;
+      printString = (
+        <React.Fragment>
+          <span className={styles.bolded}>{props.activity.person.name}</span>{" "}
+          increased{" "}
+          <span className={styles.bolded}>{props.activity.target}</span> quota.
+        </React.Fragment>
+      );
+
       break;
     case "added_leads":
-      printString = `${props.activity.person.name} added new leads to ${props.activity.target}.`;
+      printString = (
+        <React.Fragment>
+          <span className={styles.bolded}>{props.activity.person.name}</span>{" "}
+          added new leads to{" "}
+          <span className={styles.bolded}>{props.activity.target}</span>.
+        </React.Fragment>
+      );
+
       break;
     case "archived_team":
-      printString = `${props.activity.person.name} archived the team ${props.activity.target}.`;
+      printString = (
+        <React.Fragment>
+          <span className={styles.bolded}>{props.activity.person.name}</span>{" "}
+          archived the team{" "}
+          <span className={styles.bolded}>{props.activity.target}</span>.
+        </React.Fragment>
+      );
+
+    default:
+      break;
   }
 
   return (
