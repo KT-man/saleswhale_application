@@ -1,22 +1,16 @@
-import React, { useState, useContext } from "react";
-import Card from "react-bootstrap/Card";
+import React, { useContext } from "react";
+import ReactContext from "../react-context";
+import styles from "./CompanyCard.module.css";
+
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Card from "react-bootstrap/Card";
+
 import { ReactComponent as CommentIcon } from "../icons/icon-conversations-small.svg";
 import { ReactComponent as SmallLeadsIcon } from "../icons/icon-leads-small.svg";
-import styles from "./CompanyCard.module.css";
-
-import ReactContext from "../react-context";
 
 const CompanyCard = (props) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const handleSetIsFavorite = () => {
-    setIsFavorite(true);
-    console.log("running");
-  };
-
   const reactCtx = useContext(ReactContext);
 
   const addToFavorite = (team) => {
@@ -42,7 +36,7 @@ const CompanyCard = (props) => {
           <Card.Body>
             <Row>
               <Col xl={1}>
-                <img src={props.teamInfo.image}></img>
+                <img src={props.teamInfo.image} alt="companyImage"></img>
               </Col>
               <Col xl={{ span: 7, offset: 1 }}>
                 <div className={styles.company}>{props.teamInfo.name}</div>
@@ -94,15 +88,15 @@ const CompanyCard = (props) => {
               <div className={styles.desc}>{props.teamInfo.description}</div>
             </Row>
             <hr></hr>
-            <Row>
+            <Row className={styles.footer}>
               <Col>
-                <div className={styles.footer}>
+                <div>
                   <CommentIcon></CommentIcon>
                   {props.teamInfo.campaigns_count} Campaigns
                 </div>
               </Col>
               <Col>
-                <div className={styles.footer}>
+                <div>
                   <SmallLeadsIcon></SmallLeadsIcon>
                   {props.teamInfo.leads_count} Leads
                 </div>

@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import styles from "./ContentContainers.module.css";
+
 import AllTeams from "./AllTeams";
 import ArchiveTeams from "./ArchiveTeams";
 import FavoriteTeams from "./FavoriteTeams";
 
-import CompanyCard from "./CompanyCard";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-
-import styles from "./ContentContainer.module.css";
 
 const ContentContainer = (props) => {
   const archivedTeams = props.teams.filter((team) => team.is_archived === true);

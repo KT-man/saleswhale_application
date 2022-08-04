@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "./ActivityFeed.module.css";
+
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import IndivUser from "./IndivUser";
-
-import styles from "./ActivityFeed.module.css";
 
 const ActivityFeed = (props) => {
   return (
@@ -19,11 +19,7 @@ const ActivityFeed = (props) => {
         <Row>
           {props.userActivity.map((activity) => {
             return (
-              <IndivUser
-                key={Math.random()}
-                // Math.random() to generate pseudorandom key to avoid React warning. Could be replaced with a database _id
-                activity={activity}
-              ></IndivUser>
+              <IndivUser key={Math.random()} activity={activity}></IndivUser>
             );
           })}
         </Row>

@@ -1,9 +1,9 @@
 import React from "react";
+import styles from "./ContentContainers.module.css";
+
 import CompanyCard from "./CompanyCard";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-
-import styles from "./ContentContainer.module.css";
 
 const ArchiveTeams = (props) => {
   return (

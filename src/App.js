@@ -80,36 +80,20 @@ function App() {
     setShowFavorites(false);
   };
 
-  // --------------------------
-  // -------------------------- Functions to populate favorites array
-  // --------------------------
-
-  const addFavorite = (teamObj) => {
-    setFavoriteList([...favoriteList, teamObj]);
-    console.log(favoriteList);
-  };
-
-  const removeFavorite = (index) => {
-    const removedFavorite = favoriteList.filter((team, i) => i !== index);
-    setFavoriteList([removedFavorite]);
-    console.log("minus");
-    console.log(favoriteList);
-  };
-
   return (
     <div className="App">
       <div>
         <Container fluid>
           <Row>
             <Col>
-              <SideNav></SideNav>
+              <SideNav xs={1}></SideNav>
             </Col>
-            <Col xl={11}>
+            <Col xs={11}>
               <PageNav className="main" current_user={currentUser}></PageNav>
             </Col>
           </Row>
           <Row>
-            <Col xl={{ span: 11, offset: 1 }}>
+            <Col xs={{ span: 11, offset: 1 }}>
               <Header
                 className="main"
                 handleSetShowAll={handleSetShowAll}
@@ -119,7 +103,7 @@ function App() {
             </Col>
           </Row>
           <Row>
-            <Col xl={{ span: 8, offset: 1 }}>
+            <Col xs={{ span: 8, offset: 1 }}>
               <ReactContext.Provider value={{ favoriteList, setFavoriteList }}>
                 <ContentContainer
                   className="main"
@@ -127,13 +111,10 @@ function App() {
                   showAll={showAll}
                   showFavorites={showFavorites}
                   showArchive={showArchive}
-                  favoriteList={favoriteList}
-                  addFavorite={addFavorite}
-                  removeFavorite={removeFavorite}
                 ></ContentContainer>
               </ReactContext.Provider>
             </Col>
-            <Col xl={3}>
+            <Col xs={3}>
               <ActivityFeed userActivity={userActivity}></ActivityFeed>
             </Col>
           </Row>

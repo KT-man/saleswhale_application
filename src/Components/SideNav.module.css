@@ -9,22 +9,21 @@
   z-index: 1;
 }
 
-.icon {
-  padding-right: 18px;
+.iconBox {
   height: 80px;
   width: 80px;
   margin-left: 0px;
 }
 
-.icon:first-of-type {
-  margin-top: 20px;
+.icon {
+  margin-top: 15px;
 }
 
-.icon:last-of-type {
+.iconBox:last-of-type {
   position: absolute;
-  bottom: 0px;
+  bottom: 20px;
 }
 
-.icon:hover {
-  fill: white;
+.iconBox:hover {
+  background-color: #2995da;
 }

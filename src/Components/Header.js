@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { ReactComponent as CompaniesIcon } from "../icons/icon-companies.svg";
-import { ReactComponent as PlusSign } from "../icons/PlusSign.svg";
-import { ReactComponent as SearchIcon } from "../icons/icon-search.svg";
 
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
@@ -11,17 +8,21 @@ import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 
+import { ReactComponent as CompaniesIcon } from "../icons/icon-companies.svg";
+import { ReactComponent as PlusSign } from "../icons/PlusSign.svg";
+import { ReactComponent as SearchIcon } from "../icons/icon-search.svg";
+
 const Header = (props) => {
   return (
     <div className={styles.headerContainer}>
       <Row>
-        <Col xl={1}>
+        <Col xs={1}>
           <CompaniesIcon className={styles.companyIcon}></CompaniesIcon>
         </Col>
-        <Col xl={1}>
+        <Col xs={2}>
           <div className={styles.teams}>Teams</div>
         </Col>
-        <Col xl={{ span: 5, offset: 5 }}>
+        <Col sm={{ span: 5, offset: 4 }}>
           <div>
             <Button className={styles.newTeamButton}>
               <PlusSign className={styles.plusSign}></PlusSign> CREATE NEW TEAM
@@ -30,7 +31,7 @@ const Header = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col xl={4}>
+        <Col sm={4}>
           <Nav className={styles.headerNav}>
             <Nav.Link
               className={styles.underline}
@@ -53,7 +54,7 @@ const Header = (props) => {
           </Nav>
         </Col>
 
-        <Col xl={{ span: 3, offset: 5 }}>
+        <Col sm={{ span: 3, offset: 5 }}>
           <InputGroup className={`mb-3 `}>
             <InputGroup.Text className={styles.inputText}>
               <SearchIcon></SearchIcon>
