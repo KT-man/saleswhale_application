@@ -1,19 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
+import ReactContext from "./react-context";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import SideNav from "./Components/SideNav";
 import PageNav from "./Components/PageNav";
 import Header from "./Components/Header";
 import ContentContainer from "./Components/ContentContainer";
-
 import ActivityFeed from "./Components/ActivityFeed";
-import "./App.css";
-import ReactContext from "./react-context";
 
 function App() {
   const [teams, setTeams] = useState([]);
@@ -28,7 +27,7 @@ function App() {
 
   // --------------------------
   // -------------------------- Fetching Data from JSON
-  // ----------Setting of required fetch functions
+  // -------------------------- Setting of required fetch functions
   function handleSetTeams(obj) {
     setTeams(obj);
   }
@@ -61,7 +60,7 @@ function App() {
 
   // --------------------------
   // -------------------------- Functions to set "all", "favorite", and "archive"
-  // -------------------------- Handler functions will have to be passed down to Header
+  // --------------------------
 
   const handleSetShowAll = () => {
     setShowAll(true);

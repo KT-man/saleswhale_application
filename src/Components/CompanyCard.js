@@ -23,9 +23,12 @@ const CompanyCard = (props) => {
     reactCtx.setFavoriteList([...reactCtx.favoriteList, team]);
   };
 
-  const addTeamToFavorite = (teamObj) => {
-    handleSetIsFavorite();
-    addToFavorite(teamObj);
+  const removeFromFavorite = (team) => {
+    const updatedFavList = reactCtx.favoriteList.filter((team) => {
+      return team.id !== props.teamInfo.id;
+    });
+
+    reactCtx.setFavoriteList(updatedFavList);
   };
 
   return (
@@ -48,11 +51,12 @@ const CompanyCard = (props) => {
                 </div>
               </Col>
               <Col xl={2}>
-                {isFavorite ? (
+                {reactCtx.favoriteList.includes(props.teamInfo) ? (
                   <button
                     className={styles.starButton}
-                    onClick={handleSetIsFavorite}
-                    // onClick={handleRemoveFavorite}
+                    onClick={() => {
+                      removeFromFavorite();
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +73,8 @@ const CompanyCard = (props) => {
                   <button
                     className={styles.starButton}
                     onClick={() => {
-                      addTeamToFavorite(props.teamInfo);
+                      addToFavorite(props.teamInfo);
                     }}
-                    // onClick={handleAddFavorite}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
